@@ -85,22 +85,10 @@ for bookingItem in data:
     for i in range(len(head)):
         match head[i]['title']:
             case 'Anreise':
-                # for detailItem in bookingItem['data']:
-                #     if detailItem['columnId'] == head[i]['id']:
-                #         travelDateStart = detailItem['value']
-                #         travelDateStart = travelDateStart.split('-')
-                #         event.add('dtstart', datetime(int(travelDateStart[0]), int(travelDateStart[1]), int(travelDateStart[2]), 12, 0, 0, tzinfo=pytz.timezone("Europe/Berlin")))
-                #         description += head[i]['title'] + ': ' + travelDateStart[2] + '.' + travelDateStart[1] + '.' + travelDateStart[0] + '\n'
                 caldavDate, formattedDate = getDates(bookingItem['data'], head[i]['id'])
                 event.add('dtstart', caldavDate)
                 description += head[i]['title'] + ': ' + formattedDate + '\n'
             case 'Abreise':
-                # for detailItem in bookingItem['data']:
-                #     if detailItem['columnId'] == head[i]['id']:
-                #         travelDateEnd = detailItem['value']
-                #         travelDateEnd = travelDateEnd.split('-')
-                #         event.add('dtend', datetime(int(travelDateEnd[0]), int(travelDateEnd[1]), int(travelDateEnd[2]), 12, 0, 0, tzinfo=pytz.timezone("Europe/Berlin")))
-                #         description += head[i]['title'] + ': ' + travelDateEnd[2] + '.' + travelDateEnd[1] + '.' + travelDateEnd[0] + '\n'
                 caldavDate, formattedDate = getDates(bookingItem['data'], head[i]['id'])
                 event.add('dtend', caldavDate)
                 description += head[i]['title'] + ': ' + formattedDate + '\n'
