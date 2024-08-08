@@ -103,6 +103,7 @@ for bookingItem in data:
                 #         description += head[i]['title'] + ': ' + travelDateEnd[2] + '.' + travelDateEnd[1] + '.' + travelDateEnd[0] + '\n'
                 caldavDate, formattedDate = getDates(bookingItem['data'], head[i]['id'])
                 event.add('dtend', caldavDate)
+                description += head[i]['title'] + ': ' + formattedDate + '\n'
             case 'Belegungstyp':
                 for detailItem in bookingItem['data']:
                     if detailItem['columnId'] == head[i]['id']:
