@@ -103,13 +103,11 @@ for bookingItem in data:
             case 'Vorname':
                 for detailItem in bookingItem['data']:
                     if detailItem['columnId'] == head[i]['id']:
-                        vorname = detailItem['value']
-                        summary += detailItem['value'] + ' '
+                        firstname = detailItem['value']
             case 'Nachname':
                 for detailItem in bookingItem['data']:
                     if detailItem['columnId'] == head[i]['id']:
-                        nachname = detailItem['value']
-                        summary += detailItem['value']
+                        lastname = detailItem['value']
             case 'Buchungstyp':
                 for detailItem in bookingItem['data']:
                     if detailItem['columnId'] == head[i]['id']:
@@ -120,7 +118,8 @@ for bookingItem in data:
         summary = 'Eigenbelegung'
         description += 'Eigenbelegung'
     else:
-        description += 'Gast: ' + vorname + ' ' + nachname + '\n'
+        summary = firstname + ' ' + lastname
+        description += 'Gast: ' + firstname + ' ' + lastname + '\n'
         description += 'Buchungstyp: ' + buchungstyp
     event.add('summary', summary)
     event.add('description', description)
