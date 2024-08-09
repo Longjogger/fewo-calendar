@@ -20,10 +20,11 @@ TABLESDATAURL = os.getenv('TABLESDATAURL')
 CALURL = os.getenv('CALURL')
 
 # Calendar colors
-colors = {}
-colors['Eigenbelegung'] = 'blue'
-colors['Buchung'] = 'green'
-colors['Stornierung'] = 'silver'
+COLORS = {
+    'Eigenbelegung': 'blue',
+    'Buchung': 'green',
+    'Stornierung': 'silver'
+}
 
 # Function
 # cURL request for getting data from Nextcloud Tables View
@@ -98,7 +99,7 @@ for bookingItem in data:
                         for value in head[i]['selectionOptions']:
                             if value['id'] == int(detailItem['value']):
                                 belegungstyp = value['label']
-                                event.add('color', colors[belegungstyp])
+                                event.add('color', COLORS[belegungstyp])
                                 description += head[i]['title'] + ': ' + belegungstyp + '\n'
             case 'Vorname':
                 for detailItem in bookingItem['data']:
