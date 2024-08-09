@@ -29,7 +29,7 @@ COLORS = {
 # Function
 # cURL request for getting data from Nextcloud Tables View
 # Parameter: URL, Username, Password
-def getTablesData(url, username, password):
+def get_tables_data(url, username, password):
     buffer = BytesIO()
     c = pycurl.Curl()
     c.setopt(c.URL, url)
@@ -45,7 +45,7 @@ def getTablesData(url, username, password):
 # Function
 # Extract dates (begin, end) from data
 # Parameter: data, id
-def getDates(data, id):
+def get_dates(data, id):
     for item in data:
         if item['columnId'] == id:
             date = item['value']
@@ -56,8 +56,8 @@ def getDates(data, id):
 
 
 # Load data from Nextcloud Tables
-head = getTablesData(TABLESHEADURL, USERNAME, PASSWORD)
-data = getTablesData(TABLESDATAURL, USERNAME, PASSWORD)
+head = get_tables_data(TABLESHEADURL, USERNAME, PASSWORD)
+data = get_tables_data(TABLESDATAURL, USERNAME, PASSWORD)
 
 
 # Open Calendar 
@@ -86,11 +86,11 @@ for bookingItem in data:
     for i in range(len(head)):
         match head[i]['title']:
             case 'Anreise':
-                caldavDate, formattedDate = getDates(bookingItem['data'], head[i]['id'])
+                caldavDate, formattedDate = get_dates(bookingItem['data'], head[i]['id'])
                 event.add('dtstart', caldavDate)
                 description += head[i]['title'] + ': ' + formattedDate + '\n'
             case 'Abreise':
-                caldavDate, formattedDate = getDates(bookingItem['data'], head[i]['id'])
+                caldavDate, formattedDate = get_dates(bookingItem['data'], head[i]['id'])
                 event.add('dtend', caldavDate)
                 description += head[i]['title'] + ': ' + formattedDate + '\n'
             case 'Belegungstyp':
