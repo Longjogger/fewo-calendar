@@ -1,5 +1,5 @@
 # Fewo-Calendar
-Read holiday apartment (Ferienwohung \[Fewo\]) bookings from Nextcloud Table and import them in a calendar via CalDav.
+Read holiday apartment (Ferienwohnung \[Fewo\]) bookings from the Nextcloud Tables app and import them into a (Nextcloud) calendar via CalDav.
 
 ## Prerequisites
 
@@ -16,3 +16,4 @@ In the Tables app, you need a view with the following columns:
 Usually, the view is shared as read-only with a special account created specifically for this task (e.g., the account is named 'fewo').
 
 In the Calendar app, you need an empty calendar, which you will use for pushing the booking dates into.
+It is not necessary to use the Nextlcloud Calendar app; any other software that works with CalDav is compatible.
