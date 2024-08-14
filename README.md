@@ -16,7 +16,6 @@ In the Tables app, you need a view with the following columns:
 Usually, the view is shared as read-only with a special account created specifically for this task (e.g., the account is named 'fewo').
 
 In the Calendar app, you need an empty calendar, which you will use for pushing the booking dates into.
-It is not necessary to use the Nextlcloud Calendar app; any other software that works with CalDav is compatible.
 
 ### Python
 For development, I used Python 3.10. Install Python 3.10 in your Linux distribution (Debian/Ubuntu) with the following command:
