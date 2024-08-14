@@ -13,14 +13,16 @@ In the Tables app, you need a view with the following columns:
 * Firstname (Vorname, format: text)
 * Lastname (Nachname, format: text)
 * Type of Booking (Buchungstyp, format: selection between the possible sources of booking)
-Usually, the view is shared as read-only with a special account created specifically for this task (e.g., the account is named 'fewo').
+Usually, the view is shared as read-only with a special account created specifically for this project (e.g., the account is named 'fewo').
 
-In the Calendar app, you need an empty calendar, which you will use for pushing the booking dates into.
+In the Calendar app, you need an empty calendar, which you will use for pushing the booking dates into. I recommend that you create the calendar with your personal Nextcloud account and share it with the special account created specifically for this project.
 
 ### Python
 For development, I used Python 3.10. Install Python 3.10 in your Linux distribution (Debian/Ubuntu) with the following command:
+
  sudo apt install python3
 
 After this, install the required Python dependencies:
+
  pip install python-dotenv pycurl certifi caldav icalendar pytz
 
