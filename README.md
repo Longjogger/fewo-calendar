@@ -17,3 +17,8 @@ Usually, the view is shared as read-only with a special account created specific
 
 In the Calendar app, you need an empty calendar, which you will use for pushing the booking dates into.
 It is not necessary to use the Nextlcloud Calendar app; any other software that works with CalDav is compatible.
+
+### Python
+For developing I was using Python 3.10. In my Ubuntu distribution I have installed the following packages:
+
+    sudo apt install python3 
