@@ -19,6 +19,8 @@ In the Calendar app, you need an empty calendar, which you will use for pushing 
 It is not necessary to use the Nextlcloud Calendar app; any other software that works with CalDav is compatible.
 
 ### Python
-For developing I was using Python 3.10. In my Ubuntu distribution I have installed the following packages:
+For development, I used Python 3.10. Install Python 3.10 in your Linux distribution (Debian/Ubuntu) with the following command:
+    sudo apt install python3
 
-    sudo apt install python3 
+After this, install the required Python dependencies:
+    pip install python-dotenv pycurl certifi caldav icalendar pytz
