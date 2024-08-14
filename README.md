@@ -20,9 +20,19 @@ In the Calendar app, you need an empty calendar, which you will use for pushing 
 ### Python
 For development, I used Python 3.10. Install Python 3.10 in your Linux distribution (Debian/Ubuntu) with the following command:
 
- sudo apt install python3
+    sudo apt install python3
 
 After this, install the required Python dependencies:
 
- pip install python-dotenv pycurl certifi caldav icalendar pytz
+    pip install python-dotenv pycurl certifi caldav icalendar pytz
+
+## Installation & Configuration
+
+First, clone this repository:
+
+    git clone https://github.com/Longjogger/fewo-calendar.git
+
+After that, rename the ```sample.env``` file into ```.env```:
+
+    mv sample.env .env
 
